@@ -70,7 +70,11 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			}
 			if j.Status == "processing" {
 				// sometimes image is ready well before the estimated_need_time, so don't wait for the full length
-				time.Sleep(time.Duration(j.EstimatedNeedTime/4) * time.Second)
+				sec := j.EstimatedNeedTime / 4
+				if sec < 5 {
+					sec = 5
+				}
+				time.Sleep(time.Duration(sec) * time.Second)
 				continue
 			}
 			if j.Status == "error" {
