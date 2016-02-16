@@ -23,5 +23,5 @@ Usage of ./page2images_agent:
 
 ## Parameters
 
-All parameters supported by page2images.com. See `http://www.page2images.com/code_wizard`.
+All parameters supported by page2images.com. See http://www.page2images.com/code_wizard for more details.
 The only exception is the `p2i_key`, which must be set as the command line argument.
